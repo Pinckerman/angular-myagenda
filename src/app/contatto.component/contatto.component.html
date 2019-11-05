@@ -1,0 +1,57 @@
+<div class="container">
+  <p class="lead">
+    <!-- string interpolation -->
+    {{ contatto.getNomeCompleto() }}
+  </p>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Nome:</p>
+    </div>
+
+    <div class="col-sm-9">
+      <!-- two-way binding -->
+      <input type="text" [(ngModel)]="contatto.nome">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Cognome:</p>
+    </div>
+    
+    <div class="col-sm-9">
+      <input type="text" [(ngModel)]="contatto.cognome">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Email:</p>
+    </div>
+    
+    <div class="col-sm-9">
+      <input type="text" [(ngModel)]="contatto.email">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Cell:</p>
+    </div>
+    
+    <div class="col-sm-9">
+      <input type="text" [(ngModel)]="contatto.cell">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Stelle:</p>
+    </div>
+    
+    <div class="col-sm-9">
+      <input type="text" [(ngModel)]="contatto.numStelle">
+    </div>
+  </div>
+</div>
