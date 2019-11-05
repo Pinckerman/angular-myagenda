@@ -1,16 +1,33 @@
 <div class="container">
-  <p class="lead">
-    <!-- string interpolation -->
+
+  <!-- ngStyle direttiva modifica stile, ngClass direttiva aggiunge una classe -->
+  <p [ngClass]="{'sfondo-grigio': contatto.isPreferito()}" class="lead"
+  [ngStyle]="{'color': setTextColor()}"> <!-- '' sintassi css, senza sintassi javascript -->
+
+    <!-- {{ }} string interpolation -->
     {{ contatto.getNomeCompleto() }}
+
+    <!-- * direttiva strutturale per cambiare DOM, "ngIf" contiene condizione if-else -->
+    <img *ngIf="contatto.isPreferito(); else btnPreferito" class="star" src="https://cdn.icon-icons.com/icons2/1077/PNG/512/star_77949.png">
+
+    <!-- rinomina una sezione di codice -->
+    <ng-template #btnPreferito>
+
+      <!-- pulsante definito con stile bootstrap: btn-primary = stile blu, btn-sm = piccolo -->
+      <button class="btn btn-primary btn-sm" (click)="contatto.setPreferito()">Preferito</button>
+      <!-- () event binding -->
+
+    </ng-template>
   </p>
 
   <div class="row">
+    <!-- bootstrap organizzato in 12 colonne -->
     <div class="col-sm-3">
       <p>Nome:</p>
     </div>
 
     <div class="col-sm-9">
-      <!-- two-way binding -->
+      <!-- [( )] two-way binding -->
       <input type="text" [(ngModel)]="contatto.nome">
     </div>
   </div>

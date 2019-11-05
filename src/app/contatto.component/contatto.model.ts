@@ -18,4 +18,12 @@ export class Contatto {
   getNomeCompleto(): string {
     return this.nome + ' ' + this.cognome;
   }
+
+  isPreferito() {
+    return this.numStelle == 5;
+  }
+
+  setPreferito() {
+    this.numStelle = 5;
+  }
 }

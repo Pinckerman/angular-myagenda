@@ -9,4 +9,9 @@ import { Contatto } from './contatto.model'
 
 export class ContattoComponent {
   contatto: Contatto = new Contatto('Federico', 'Sannicolò', 'f.san@gmail.com', '3491234567', 5);
+
+  setTextColor() {
+
+    return this.contatto.isPreferito() ? "red" : "black";
+  }
 }
